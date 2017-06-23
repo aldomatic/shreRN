@@ -10,26 +10,10 @@ import {
 import { connect } from 'react-redux';
 
 
-class ToolBar extends Component {
-
+class ToolBarBack extends Component {
   constructor(props){
     super(props);
-
-    this._openMenu = this._openMenu.bind(this);
   }
-
-  /*
-    Open Menu
-  */
-  _openMenu(){
-    this.props.dispatch({
-      type: "OPEN_MENU",
-      payload: {
-        isActive: true
-      }
-    });
-  }
-
 
   render() {
     return (
@@ -38,7 +22,7 @@ class ToolBar extends Component {
         <View>
           <View style={styles.toolbar}>
             <Text style={styles.toolbarTitle}>{this.props.title}</Text>
-            <Text style={styles.toolbarButton} onPress={this._openMenu}>Settings</Text>
+            <Text style={styles.toolbarButton} onPress={() => this.props.nav.goBack(null)}>BACK</Text>
           </View>
         </View>
       </View>
@@ -46,21 +30,16 @@ class ToolBar extends Component {
   }
 }
 
-const mapStateToProps = (state) =>{
-  return {
-    menu: state.menu
-  }
-}
-
-export default connect(mapStateToProps)(ToolBar);
+export default ToolBarBack;
 
 const styles = StyleSheet.create({
   toolbar: {
-    //backgroundColor: '#DB5D4F',
     backgroundColor: 'transparent',
     paddingTop:15,
     paddingBottom:15,
     flexDirection: 'row',
+
+
     alignItems: 'flex-start',
     justifyContent: 'center'
   },

@@ -48,7 +48,7 @@ export default class HomeView extends Component {
         <View style={styles.content}>
 
         <View style={{flex: 1, backgroundColor:'transparent', justifyContent: 'center', alignItems: 'center'}}>
-          <MyList navTo={this.props.navigation.dispatch} />
+          <MyList navTo={this.props.navigation} />
         </View>
 
           <View style={{flexDirection: 'row', flex: .10}}>
@@ -87,12 +87,12 @@ export default class HomeView extends Component {
           <View style={{flex: 1}}>
             <View style={{flex:.25, flexDirection: 'row', justifyContent: 'flex-end'}}>
               <TouchableOpacity onPress={() => this._toggleModal()}>
-                <Text style={{color: '#2b9cb3', marginRight: 10, marginTop: 10}}>Close</Text>
+                <Text style={{color: '#3bacc3', marginRight: 10, marginTop: 10}}>Close</Text>
               </TouchableOpacity>
             </View>
             <View style={{flex:1, justifyContent: 'flex-start', alignItems: 'center'}}>
               <QRCodeGen />
-              <Text style={{color:'#2b9cb3', marginTop: 30, textAlign:'center'}}>Position the camera over{"\n"}the graphic above.</Text>
+              <Text style={{color:'#88dbec', marginTop: 30, textAlign:'center'}}>Position the camera over{"\n"}the graphic above.</Text>
             </View>
           </View>
         </Modal>

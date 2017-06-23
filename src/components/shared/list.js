@@ -19,17 +19,13 @@ export default class MyList extends Component {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(['John Doe', 'Kelly Doe', 'Mark Lewis', 'John Doe', 'John Doe', 'Juan Lopez', 'John Doe', 'John Doe', 'John Doe', 'John Doe', 'John Doe', 'John Doe']),
+      dataSource: ds.cloneWithRows(['John Doe', 'Kelly Doe', 'Mark Rojas', 'Robert Johnson', 'Lisa Smith', 'Juan Lopez']),
     };
   }
 
   _renderRows(rowData){
     return (
-      <TouchableHighlight underlayColor="#257181" activeOpacity={0.9} onPress={() => this.props.navTo({
-        type: "replaceScreen",
-        routeName: 'DetailsView',
-        params: {id: rowData}
-      })}>
+      <TouchableHighlight underlayColor="#257181" activeOpacity={0.9} onPress={() => this.props.navTo.navigate('DetailsView',  {id: rowData}) }>
         <View style={{borderBottomColor:'#27344b', borderBottomWidth: 0}}>
           <Text style={styles.listItem}>{rowData}</Text>
         </View>
@@ -56,6 +52,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     textAlign: 'left',
     padding: 13,
-    fontSize: 18
+    fontSize: 20,
+    fontWeight:'normal'
   }
 });

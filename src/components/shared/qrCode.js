@@ -13,7 +13,7 @@ const QRCodeGen = () => {
      value='aldomatic'
      size={200}
      bgColor='#195865'
-     fgColor='#72e4b3' />
+     fgColor='#89f2c5' />
   );
 }
 export default QRCodeGen;
