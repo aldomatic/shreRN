@@ -25,12 +25,12 @@ export default class MyList extends Component {
 
   _renderRows(rowData){
     return (
-      <TouchableHighlight underlayColor="#2b3850" activeOpacity={0.7} onPress={() => this.props.navTo({
+      <TouchableHighlight underlayColor="#257181" activeOpacity={0.9} onPress={() => this.props.navTo({
         type: "replaceScreen",
         routeName: 'DetailsView',
         params: {id: rowData}
       })}>
-        <View style={{borderBottomColor:'#27344b', borderBottomWidth: 1}}>
+        <View style={{borderBottomColor:'#27344b', borderBottomWidth: 0}}>
           <Text style={styles.listItem}>{rowData}</Text>
         </View>
       </TouchableHighlight>
@@ -53,9 +53,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   listItem: {
-    color: '#89a3d4',
+    color: '#fff',
     textAlign: 'left',
-    padding: 15,
+    padding: 13,
     fontSize: 18
   }
 });

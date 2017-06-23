@@ -3,9 +3,12 @@ import {
   View,
   Text,
   StyleSheet,
-  StatusBar
+  StatusBar,
+  requireNativeComponent,
+  processColor
 } from 'react-native';
 import { connect } from 'react-redux';
+
 
 class ToolBar extends Component {
 
@@ -53,7 +56,8 @@ export default connect(mapStateToProps)(ToolBar);
 
 const styles = StyleSheet.create({
   toolbar: {
-    backgroundColor: '#DB5D4F',
+    //backgroundColor: '#DB5D4F',
+    backgroundColor: 'transparent',
     paddingTop:15,
     paddingBottom:15,
     flexDirection: 'row',
@@ -74,7 +78,7 @@ const styles = StyleSheet.create({
     color:'#fff',//db3a7c
     textAlign:'left',
     fontWeight: 'bold',
-    fontSize: 24,
+    fontSize: 34,
     flex: 1,
     marginLeft: 15
     }

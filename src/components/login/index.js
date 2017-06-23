@@ -6,10 +6,14 @@ import {
   TextInput,
   StatusBar,
   Button,
-  TouchableHighlight
+  TouchableHighlight,
+  requireNativeComponent,
+  processColor
 } from 'react-native';
 
 import Header from '../shared/header';
+
+let RNLinearGradient = requireNativeComponent('RNLinearGradientSwift', null);
 
 class LoginView extends React.Component {
 
@@ -23,7 +27,11 @@ class LoginView extends React.Component {
   render() {
     let {navigate} = this.props.navigation;
     return (
-      <View style={styles.mainContainer}>
+      <RNLinearGradient
+        style={styles.mainContainer}
+        locations={[0, 1.0]}
+        colors={[processColor('#5ED2A0'), processColor('#339CB1')]}>
+
         <StatusBar hidden />
         <View style={styles.content}>
               <View style={{
@@ -33,10 +41,11 @@ class LoginView extends React.Component {
                 justifyContent: 'center'
               }}>
                 <Text style={{
-                  color: '#DBBFB3',
-                  fontSize: 30,
-                  fontWeight: 'bold'
-                }}>LOGO</Text>
+                  color: '#2B6059',
+                  fontSize: 50,
+                  fontWeight: 'bold',
+                  backgroundColor: 'transparent'
+                }}></Text>
               </View>
               <View style={{flex:2, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
                 <View style={{backgroundColor:'transparent', width:300}}>
@@ -55,20 +64,20 @@ class LoginView extends React.Component {
 
                   <TouchableHighlight
                     onPress={()=> navigate('HomeView')}
-                    underlayColor={'#cb5043'}
+                    underlayColor={'transparent'}
                     activeOpacity={0.6}
                     >
                     <View
-                      style={{height:75, width:300, backgroundColor: '#DB5D4F',flexDirection:'column', justifyContent: 'center', alignItems: 'center', borderRadius: 0}}
+                      style={{height:70, width:300, backgroundColor: '#195865',flexDirection:'column', justifyContent: 'center', alignItems: 'center', borderRadius: 50, borderBottomColor: '#154e59', borderBottomWidth:1}}
                     >
-                      <Text style={{color:'#fff', fontSize: 24, fontWeight: 'bold'}}>SIGN IN</Text>
+                      <Text style={{color:'#fff', fontSize: 24, fontWeight: 'bold'}}>Facebook Login</Text>
                     </View>
                   </TouchableHighlight>
 
 
 
                   <Text style={{
-                    color: '#566a90',
+                    color: '#fff',
                     textAlign: 'center',
                     marginTop: 15,
                     fontSize: 14
@@ -78,15 +87,16 @@ class LoginView extends React.Component {
               </View>
               <View style={{flex: .25}}>
               <Text style={{
-                color: '#566a90',
+                color: '#fff',
                 textAlign: 'center',
                 marginTop: 15,
-                fontSize: 12
+                fontSize: 12,
+                backgroundColor: 'transparent'
               }}>Copyright 2017
               </Text>
               </View>
         </View>
-      </View>
+      </RNLinearGradient>
     );
   }
 }
@@ -98,7 +108,6 @@ const styles = StyleSheet.create({
       flex:1
     },
     content:{
-      backgroundColor:'#1e293d',
       flex:1
     }
 });

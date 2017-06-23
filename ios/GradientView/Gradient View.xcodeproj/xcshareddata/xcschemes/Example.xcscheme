@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0830"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
-      parallelizeBuildables = "NO"
+      parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
@@ -14,24 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "83CBBA2D1A601D0E00E9B192"
-               BuildableName = "libReact.a"
-               BlueprintName = "React"
-               ReferencedContainer = "container:../node_modules/react-native/React/React.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "shreApp.app"
-               BlueprintName = "shreApp"
-               ReferencedContainer = "container:shreApp.xcodeproj">
+               BlueprintIdentifier = "2163B9F51A25FBF000610B0C"
+               BuildableName = "Example.app"
+               BlueprintName = "Example"
+               ReferencedContainer = "container:Gradient View.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -42,10 +28,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "shreAppTests.xctest"
-               BlueprintName = "shreAppTests"
-               ReferencedContainer = "container:shreApp.xcodeproj">
+               BlueprintIdentifier = "2163BA0A1A25FBF000610B0C"
+               BuildableName = "ExampleTests.xctest"
+               BlueprintName = "ExampleTests"
+               ReferencedContainer = "container:Gradient View.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2163BA291A25FBFD00610B0C"
+               BuildableName = "GradientViewTests.xctest"
+               BlueprintName = "GradientViewTests"
+               ReferencedContainer = "container:Gradient View.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -60,20 +60,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "shreAppTests.xctest"
-               BlueprintName = "shreAppTests"
-               ReferencedContainer = "container:shreApp.xcodeproj">
+               BlueprintIdentifier = "2163BA0A1A25FBF000610B0C"
+               BuildableName = "ExampleTests.xctest"
+               BlueprintName = "ExampleTests"
+               ReferencedContainer = "container:Gradient View.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2163BA291A25FBFD00610B0C"
+               BuildableName = "GradientViewTests.xctest"
+               BlueprintName = "GradientViewTests"
+               ReferencedContainer = "container:Gradient View.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "shreApp.app"
-            BlueprintName = "shreApp"
-            ReferencedContainer = "container:shreApp.xcodeproj">
+            BlueprintIdentifier = "2163B9F51A25FBF000610B0C"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
+            ReferencedContainer = "container:Gradient View.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -93,10 +103,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "shreApp.app"
-            BlueprintName = "shreApp"
-            ReferencedContainer = "container:shreApp.xcodeproj">
+            BlueprintIdentifier = "2163B9F51A25FBF000610B0C"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
+            ReferencedContainer = "container:Gradient View.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -112,10 +122,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "shreApp.app"
-            BlueprintName = "shreApp"
-            ReferencedContainer = "container:shreApp.xcodeproj">
+            BlueprintIdentifier = "2163B9F51A25FBF000610B0C"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
+            ReferencedContainer = "container:Gradient View.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
