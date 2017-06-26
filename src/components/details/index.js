@@ -10,17 +10,18 @@ import {
 
 import ToolBarBack from '../shared/toolbar_back';
 
-let RNLinearGradient = requireNativeComponent('RNLinearGradientSwift', null);
+import LinearGradient from 'react-native-linear-gradient';
+// let RNLinearGradient = requireNativeComponent('RNLinearGradientSwift', null);
 
 export default class DetailsView extends Component {
 
   render() {
     const { id } = this.props.navigation.state.params
     return (
-        <RNLinearGradient
-          style={styles.container}
-          locations={[0, 1.0]}
-          colors={[processColor('#5ED2A0'), processColor('#339CB1')]}>
+      <LinearGradient
+        style={styles.mainContainer}
+        locations={[0,0.8]}
+        colors={['#5ED2A0', '#339CB1']}>
 
             <ToolBarBack title="Details" nav={this.props.navigation} />
 
@@ -46,13 +47,13 @@ export default class DetailsView extends Component {
             </View>
            </View>
 
-          </RNLinearGradient>
+          </LinearGradient>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1
   },
   name: {

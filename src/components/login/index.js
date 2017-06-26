@@ -11,9 +11,9 @@ import {
   processColor
 } from 'react-native';
 
-import Header from '../shared/header';
+import LinearGradient from 'react-native-linear-gradient';
 
-let RNLinearGradient = requireNativeComponent('RNLinearGradientSwift', null);
+import Header from '../shared/header';
 
 class LoginView extends React.Component {
 
@@ -27,10 +27,10 @@ class LoginView extends React.Component {
   render() {
     let {navigate} = this.props.navigation;
     return (
-      <RNLinearGradient
+      <LinearGradient
         style={styles.mainContainer}
-        locations={[0, 1.0]}
-        colors={[processColor('#5ED2A0'), processColor('#339CB1')]}>
+        locations={[0,0.8]}
+        colors={['#5ED2A0', '#339CB1']}>
 
         <StatusBar hidden />
         <View style={styles.content}>
@@ -96,7 +96,7 @@ class LoginView extends React.Component {
               </Text>
               </View>
         </View>
-      </RNLinearGradient>
+      </LinearGradient>
     );
   }
 }

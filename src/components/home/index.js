@@ -16,7 +16,8 @@ import Menu from '../shared/menu';
 import QRCodeGen from '../shared/qrCode';
 import MyList from '../shared/list';
 
-let RNLinearGradient = requireNativeComponent('RNLinearGradientSwift', null);
+// let RNLinearGradient = requireNativeComponent('RNLinearGradientSwift', null);
+import LinearGradient from 'react-native-linear-gradient';
 
 export default class HomeView extends Component {
   state = {open: false};
@@ -38,10 +39,10 @@ export default class HomeView extends Component {
   render() {
 
     return (
-      <RNLinearGradient
+      <LinearGradient
         style={styles.mainContainer}
-        locations={[0, 1.0]}
-        colors={[processColor('#5ED2A0'), processColor('#339CB1')]}>
+        locations={[0,0.8]}
+        colors={['#5ED2A0', '#339CB1']}>
 
         <Menu nav={this.props.navigation} />
         <ToolBar title="SHRE" />
@@ -96,7 +97,7 @@ export default class HomeView extends Component {
             </View>
           </View>
         </Modal>
-    </RNLinearGradient>
+    </LinearGradient>
     );
   }
 }
