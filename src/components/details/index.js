@@ -15,6 +15,10 @@ import LinearGradient from 'react-native-linear-gradient';
 
 export default class DetailsView extends Component {
 
+  componentWillMount(){
+    //
+  }
+
   render() {
     const { id } = this.props.navigation.state.params
     return (

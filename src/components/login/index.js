@@ -15,7 +15,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Header from '../shared/header';
 
 const FBSDK = require('react-native-fbsdk');
-const { LoginButton } = FBSDK;
+const { LoginButton, AccessToken } = FBSDK;
 
 class LoginView extends React.Component {
 
@@ -64,7 +64,7 @@ class LoginView extends React.Component {
                     placeholderTextColor="#df4f6d"
                   />*/}
 
-                  <TouchableHighlight
+                  {/*}<TouchableHighlight
                     onPress={()=> navigate('HomeView')}
                     underlayColor={'transparent'}
                     activeOpacity={0.6}
@@ -74,7 +74,7 @@ class LoginView extends React.Component {
                     >
                       <Text style={{color:'#fff', fontSize: 24, fontWeight: 'bold'}}>Facebook Login</Text>
                     </View>
-                  </TouchableHighlight>
+                  </TouchableHighlight>*/}
 
                   <LoginButton
                    readPermissions={["public_profile"]}
@@ -85,13 +85,13 @@ class LoginView extends React.Component {
                        } else if (result.isCancelled) {
                          alert("Login was cancelled");
                        } else {
-                         alert("Login was successful with permissions: " + result.grantedPermissions)
+                         AccessToken.getCurrentAccessToken().then((data) => {
+                           navigate('HomeView', data)
+                         });
                        }
                      }
                    }
                    onLogoutFinished={() => console.log("User logged out")}/>
-
-
 
                   <Text style={{
                     color: '#fff',

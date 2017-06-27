@@ -16,7 +16,6 @@ import Menu from '../shared/menu';
 import QRCodeGen from '../shared/qrCode';
 import MyList from '../shared/list';
 
-// let RNLinearGradient = requireNativeComponent('RNLinearGradientSwift', null);
 import LinearGradient from 'react-native-linear-gradient';
 
 export default class HomeView extends Component {
