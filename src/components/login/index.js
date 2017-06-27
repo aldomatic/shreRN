@@ -12,8 +12,10 @@ import {
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
-
 import Header from '../shared/header';
+
+const FBSDK = require('react-native-fbsdk');
+const { LoginButton } = FBSDK;
 
 class LoginView extends React.Component {
 
@@ -73,6 +75,21 @@ class LoginView extends React.Component {
                       <Text style={{color:'#fff', fontSize: 24, fontWeight: 'bold'}}>Facebook Login</Text>
                     </View>
                   </TouchableHighlight>
+
+                  <LoginButton
+                   readPermissions={["public_profile"]}
+                   onLoginFinished={
+                     (error, result) => {
+                       if (error) {
+                         alert("Login failed with error: " + result.error);
+                       } else if (result.isCancelled) {
+                         alert("Login was cancelled");
+                       } else {
+                         alert("Login was successful with permissions: " + result.grantedPermissions)
+                       }
+                     }
+                   }
+                   onLogoutFinished={() => console.log("User logged out")}/>
 
 
 
