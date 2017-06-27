@@ -7,8 +7,7 @@ import {
   StatusBar,
   Button,
   TouchableHighlight,
-  requireNativeComponent,
-  processColor
+  AsyncStorage
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
@@ -51,18 +50,6 @@ class LoginView extends React.Component {
               </View>
               <View style={{flex:2, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
                 <View style={{backgroundColor:'transparent', width:300}}>
-                  {/*<TextInput
-                    style={{height: 50, width:300, borderColor: 'white', borderWidth: 0, backgroundColor: '#530a19', paddingLeft: 10, paddingRight: 10, color:'white'}}
-                    onChangeText={(text) => console.log(text)}
-                    placeholder="Email"
-                    placeholderTextColor="#df4f6d"
-                  />
-                  <TextInput
-                    style={{height: \80, width:300, borderColor: 'white', borderWidth: 0, backgroundColor: '#530a19', paddingLeft: 10, paddingRight: 10, color:'white', marginTop:10}}
-                    onChangeText={(text) => console.log(text)}
-                    placeholder="Password"
-                    placeholderTextColor="#df4f6d"
-                  />*/}
 
                   {/*}<TouchableHighlight
                     onPress={()=> navigate('HomeView')}
@@ -86,8 +73,13 @@ class LoginView extends React.Component {
                          alert("Login was cancelled");
                        } else {
                          AccessToken.getCurrentAccessToken().then((data) => {
-                           navigate('HomeView', data)
+                           try{
+                             AsyncStorage.setItem('accessToken', data.accessToken)
+                           } catch (error){
+                             console.log('Error saving token', error)
+                           }
                          });
+                         navigate('HomeView', {})
                        }
                      }
                    }

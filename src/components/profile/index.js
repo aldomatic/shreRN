@@ -3,9 +3,8 @@ import {
   View,
   Text,
   StyleSheet,
-  requireNativeComponent,
-  processColor,
-  Image
+  Image,
+  AsyncStorage
 } from 'react-native';
 
 import ToolBarBack from '../shared/toolbar_back';
@@ -18,20 +17,34 @@ export default class ProfileView extends Component {
   constructor(props){
     super(props)
     this.state = {
-      FBMeData: {}
+      FBMeData: {
+        name: '',
+        pic: '',
+        email: ''
+      }
     }
   }
 
-
-  componentDidMount(){
-    FBRequestPromise.then((data) => {
-      console.log(data);
-        this.setState({
-          FBMeData: data
-        })
-      }).catch((reason) => {
-        console.log('Error ('+reason+')');
-    });
+  componentWillMount(){
+    try{
+      const accessToken = AsyncStorage.getItem('accessToken');
+      if(accessToken !== null){
+        FBRequestPromise(accessToken).then((data) => {
+          console.log(data);
+            this.setState({
+              FBMeData: {
+                name: data.name,
+                pic: data.picture.data.url,
+                email: data.email
+              }
+            })
+          }).catch((reason) => {
+            console.log('Error ('+reason+')');
+        });
+      }
+    } catch (error){
+      console.log('Error saving token', error)
+    }
   }
 
   render() {
@@ -52,13 +65,14 @@ export default class ProfileView extends Component {
                flex: 1
              }}>
              <Image
-             source={require('../../assets/images/avatar-placeholder.png')}
+             source={{uri: this.state.FBMeData.pic}}
              style={{width: 120, height: 120, marginTop: 10, overflow: 'hidden', borderRadius: 60, borderColor: '#5ED2A0', borderWidth: 5}}
              />
+
              <Text style={styles.name}>{this.state.FBMeData.name}</Text>
               <View style={{flexDirection: 'row', justifyContent: 'center'}}>
                 <Text style={styles.text}>Email:</Text>
-                <Text style={styles.text}>test@test.com</Text>
+                <Text style={styles.text}>{this.state.FBMeData.email}</Text>
               </View>
               <View style={{flexDirection: 'row', justifyContent: 'center'}}>
                 <Text style={styles.text}>Phone:</Text>
