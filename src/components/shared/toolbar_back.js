@@ -34,7 +34,7 @@ export default ToolBarBack;
 
 const styles = StyleSheet.create({
   toolbar: {
-    backgroundColor: 'transparent',
+    backgroundColor: '#eb0b42',
     paddingTop:15,
     paddingBottom:15,
     flexDirection: 'row',
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     width:50,
     color:'#fff',
     textAlign:'center',
-    marginTop:10,
+    marginTop:8,
     marginRight: 5,
     flex: .25,
     fontSize: 16,
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     color:'#fff',//db3a7c
     textAlign:'left',
     fontWeight: 'bold',
-    fontSize: 34,
+    fontSize: 28,
     flex: 1,
     marginLeft: 15
     }

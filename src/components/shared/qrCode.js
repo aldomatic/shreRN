@@ -11,9 +11,9 @@ const QRCodeGen = () => {
   return (
     <QRCode
      value='aldomatic'
-     size={200}
-     bgColor='#195865'
-     fgColor='#89f2c5' />
+     size={220}
+     bgColor='#040626'
+     fgColor='#eb0b42' />
   );
 }
 export default QRCodeGen;

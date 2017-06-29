@@ -31,7 +31,7 @@ class LoginView extends React.Component {
       <LinearGradient
         style={styles.mainContainer}
         locations={[0,0.8]}
-        colors={['#5ED2A0', '#339CB1']}>
+        colors={['#040626', '#040626']}>
 
         <StatusBar hidden />
         <View style={styles.content}>
@@ -51,19 +51,19 @@ class LoginView extends React.Component {
               <View style={{flex:2, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
                 <View style={{backgroundColor:'transparent', width:300}}>
 
-                  {/*}<TouchableHighlight
+                  <TouchableHighlight
                     onPress={()=> navigate('HomeView')}
                     underlayColor={'transparent'}
                     activeOpacity={0.6}
                     >
                     <View
-                      style={{height:70, width:300, backgroundColor: '#195865',flexDirection:'column', justifyContent: 'center', alignItems: 'center', borderRadius: 50, borderBottomColor: '#154e59', borderBottomWidth:1}}
+                      style={{height:80, width:300, backgroundColor: '#eb0b42',flexDirection:'column', justifyContent: 'center', alignItems: 'center', borderRadius: 50, borderBottomColor: '#b10d36', borderBottomWidth:1}}
                     >
                       <Text style={{color:'#fff', fontSize: 24, fontWeight: 'bold'}}>Facebook Login</Text>
                     </View>
-                  </TouchableHighlight>*/}
+                  </TouchableHighlight>
 
-                  <LoginButton
+                  {/*}<LoginButton
                    readPermissions={["public_profile"]}
                    onLoginFinished={
                      (error, result) => {
@@ -83,10 +83,10 @@ class LoginView extends React.Component {
                        }
                      }
                    }
-                   onLogoutFinished={() => console.log("User logged out")}/>
+                   onLogoutFinished={() => console.log("User logged out")}/>*/}
 
                   <Text style={{
-                    color: '#fff',
+                    color: '#5b5f7e',
                     textAlign: 'center',
                     marginTop: 15,
                     fontSize: 14
@@ -96,7 +96,7 @@ class LoginView extends React.Component {
               </View>
               <View style={{flex: .25}}>
               <Text style={{
-                color: '#fff',
+                color: '#5b5f7e',
                 textAlign: 'center',
                 marginTop: 15,
                 fontSize: 12,

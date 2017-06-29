@@ -49,9 +49,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   listItem: {
-    color: '#fff',
+    color: '#6e7293',
     textAlign: 'left',
-    padding: 13,
+    padding: 10,
     fontSize: 20,
     fontWeight:'normal'
   }

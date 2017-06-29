@@ -4,7 +4,8 @@ import {
   Text,
   StyleSheet,
   Image,
-  AsyncStorage
+  AsyncStorage,
+  TouchableHighlight
 } from 'react-native';
 
 import ToolBarBack from '../shared/toolbar_back';
@@ -56,7 +57,13 @@ export default class ProfileView extends Component {
         colors={['#5ED2A0', '#339CB1']}>
 
             <ToolBarBack title="Profile" nav={this.props.navigation} />
-
+            <View style={{
+               flexDirection: 'column',
+               justifyContent: 'flex-start',
+               backgroundColor: 'transparent',
+               alignItems: 'center',
+               flex: 1
+             }}>
             <View style={{
                flexDirection: 'column',
                justifyContent: 'flex-start',
@@ -78,6 +85,18 @@ export default class ProfileView extends Component {
                 <Text style={styles.text}>Phone:</Text>
                 <Text style={styles.text}>214-556-6666</Text>
             </View>
+           </View>
+
+
+            <View style={{flexDirection: 'row', flex: .10}}>
+               <TouchableHighlight style={{flex: .15, backgroundColor: '#1b5f6d', justifyContent: 'center', alignItems: 'center'}} underlayColor={'#1b5f6d'} activeOpacity={0.7} onPress={() => {
+                 console.log("EDIT")
+               }}>
+               <View>
+                   <Text style={{color:"#fff", fontWeight: 'bold', fontSize: 16}}>EDIT</Text>
+               </View>
+               </TouchableHighlight>
+             </View>
            </View>
 
           </LinearGradient>

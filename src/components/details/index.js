@@ -25,7 +25,7 @@ export default class DetailsView extends Component {
       <LinearGradient
         style={styles.mainContainer}
         locations={[0,0.8]}
-        colors={['#5ED2A0', '#339CB1']}>
+        colors={['#040626', '#040626']}>
 
             <ToolBarBack title="Details" nav={this.props.navigation} />
 
@@ -34,11 +34,12 @@ export default class DetailsView extends Component {
                justifyContent: 'flex-start',
                backgroundColor: 'transparent',
                alignItems: 'center',
-               flex: 1
+               flex: 1,
+               marginTop: 15
              }}>
              <Image
              source={require('../../assets/images/avatar-placeholder.png')}
-             style={{width: 120, height: 120, marginTop: 10, overflow: 'hidden', borderRadius: 60, borderColor: '#5ED2A0', borderWidth: 5}}
+             style={{width: 130, height: 130, marginTop: 10, overflow: 'hidden', borderRadius: 65, borderColor: '#5b5f7e', borderWidth: 5}}
              />
              <Text style={styles.name}>{id}</Text>
               <View style={{flexDirection: 'row', justifyContent: 'center'}}>
