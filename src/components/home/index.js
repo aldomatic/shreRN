@@ -4,7 +4,8 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  TouchableHighlight
+  TouchableHighlight,
+  Dimensions
 } from 'react-native';
 import Modal from 'react-native-simple-modal';
 
@@ -12,6 +13,10 @@ import ToolBar from '../shared/toolbar';
 import Menu from '../shared/menu';
 import QRCodeGen from '../shared/qrCode';
 import MyList from '../shared/list';
+
+import LinearGradient from 'react-native-linear-gradient';
+
+var {height, width} = Dimensions.get('window');
 
 export default class HomeView extends Component {
   state = {open: false};
@@ -31,18 +36,23 @@ export default class HomeView extends Component {
   }
 
   render() {
+
     return (
-      <View style={styles.mainContainer}>
+      <LinearGradient
+        style={styles.mainContainer}
+        locations={[0,0.8]}
+        colors={['#040626', '#040626']}>
+
         <Menu nav={this.props.navigation} />
         <ToolBar title="SHRE" />
         <View style={styles.content}>
 
-        <View style={{flex: 1, backgroundColor:'#1e293d', justifyContent: 'center', alignItems: 'center'}}>
-          <MyList navTo={this.props.navigation.dispatch} />
+        <View style={{flex: 1, backgroundColor:'transparent', justifyContent: 'center', alignItems: 'center'}}>
+          <MyList navTo={this.props.navigation} />
         </View>
 
           <View style={{flexDirection: 'row', flex: .10}}>
-            <TouchableHighlight style={{flex: .15, backgroundColor: '#55a0cd', justifyContent: 'center', alignItems: 'center'}} underlayColor={'#55a0cd'} activeOpacity={0.7} onPress={() => {
+            <TouchableHighlight style={{flex: .15, backgroundColor: '#272b46', justifyContent: 'center', alignItems: 'center'}} underlayColor={'#323754'} activeOpacity={0.7} onPress={() => {
               this._navigate('ShareView')
             }}>
             <View>
@@ -50,7 +60,7 @@ export default class HomeView extends Component {
             </View>
             </TouchableHighlight>
 
-            <TouchableHighlight style={{flex: .10, backgroundColor: '#448ab4', justifyContent: 'center', alignItems: 'center'}} underlayColor={'#DB5D4F'} activeOpacity={0.7} onPress={() => {
+            <TouchableHighlight style={{flex: .10, backgroundColor: '#323754', justifyContent: 'center', alignItems: 'center'}} underlayColor={'#272b46'} activeOpacity={0.7} onPress={() => {
               this._toggleModal()
             }}>
             <View>
@@ -69,25 +79,24 @@ export default class HomeView extends Component {
          style={{}}
          modalStyle={{
       	   borderRadius: 0,
-      	   margin: 25,
-           height: 500,
+      	   margin: 0,
+           height: height,
       	   padding: 0,
-      	   backgroundColor: '#1e293d'
+      	   backgroundColor: '#040626'
       	}}>
           <View style={{flex: 1}}>
             <View style={{flex:.25, flexDirection: 'row', justifyContent: 'flex-end'}}>
               <TouchableOpacity onPress={() => this._toggleModal()}>
-                <Text style={{color: '#566a90', marginRight: 10, marginTop: 10}}>Close</Text>
+                <Text style={{color: '#5b5f7e', marginRight: 15, marginTop: 15, fontSize: 18}}>Close</Text>
               </TouchableOpacity>
             </View>
             <View style={{flex:1, justifyContent: 'flex-start', alignItems: 'center'}}>
               <QRCodeGen />
-              <Text style={{color:'#566a90', marginTop: 30, textAlign:'center'}}>Position the camera over{"\n"}the graphic above.</Text>
+              <Text style={{color:'#5b5f7e', marginTop: 40, textAlign:'center', fontSize: 18}}>Position the camera over{"\n"}the graphic above.</Text>
             </View>
           </View>
         </Modal>
-
-      </View>
+    </LinearGradient>
     );
   }
 }
@@ -98,7 +107,8 @@ const styles = StyleSheet.create({
       flex:1
     },
     content:{
-      backgroundColor:'#1e293d',
+      //backgroundColor:'#1e293d',
+      backgroundColor:'transparent',
       flex:1
     }
 });

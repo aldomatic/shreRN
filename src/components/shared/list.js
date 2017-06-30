@@ -19,18 +19,14 @@ export default class MyList extends Component {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(['John Doe', 'Kelly Doe', 'Mark Lewis', 'John Doe', 'John Doe', 'Juan Lopez', 'John Doe', 'John Doe', 'John Doe', 'John Doe', 'John Doe', 'John Doe']),
+      dataSource: ds.cloneWithRows(['John Doe', 'Kelly Doe', 'Mark Rojas', 'Robert Johnson', 'Lisa Smith', 'Juan Lopez']),
     };
   }
 
   _renderRows(rowData){
     return (
-      <TouchableHighlight underlayColor="#2b3850" activeOpacity={0.7} onPress={() => this.props.navTo({
-        type: "replaceScreen",
-        routeName: 'DetailsView',
-        params: {id: rowData}
-      })}>
-        <View style={{borderBottomColor:'#27344b', borderBottomWidth: 1}}>
+      <TouchableHighlight underlayColor="#257181" activeOpacity={0.9} onPress={() => this.props.navTo.navigate('DetailsView',  {id: rowData}) }>
+        <View style={{borderBottomColor:'#27344b', borderBottomWidth: 0}}>
           <Text style={styles.listItem}>{rowData}</Text>
         </View>
       </TouchableHighlight>
@@ -53,9 +49,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   listItem: {
-    color: '#89a3d4',
+    color: '#6e7293',
     textAlign: 'left',
-    padding: 15,
-    fontSize: 18
+    padding: 10,
+    fontSize: 20,
+    fontWeight:'normal'
   }
 });

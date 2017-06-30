@@ -5,18 +5,29 @@ import { combineReducers, createStore } from 'redux';
 import {Provider, connect} from 'react-redux';
 import { addNavigationHelpers } from 'react-navigation';
 
+// Reducers
+import menuReducer from './src/reducers/menuReducer';
+
 const AppNavigator = routesConfig;
-const initialState = AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams('LoginView'));
 
-
-const navReducer = (state = initialState, action) => {
-  const nextState = AppNavigator.router.getStateForAction(action, state);
-  // Simply return the original `state` if `nextState` is null or undefined.
-  return nextState || state;
+const defaultGetStateForAction = AppNavigator.router.getStateForAction;
+const navReducer = (state, action) => {
+  if(state && action.type == "replaceScreen"){
+    const routes = state.routes.slice(0, state.routes.length - 1);
+    routes.push(action);
+    console.log(routes);
+    return {
+      ...state,
+      routes,
+      index: routes.length - 1
+    }
+  }
+  return defaultGetStateForAction(action, state);
 };
 
 const appReducer = combineReducers({
-  nav: navReducer
+  nav: navReducer,
+  menu: menuReducer
 });
 
 class App extends React.Component {
