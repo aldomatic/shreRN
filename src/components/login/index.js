@@ -14,7 +14,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Header from '../shared/header';
 
 const FBSDK = require('react-native-fbsdk');
-const { LoginButton, AccessToken } = FBSDK;
+const { LoginButton, AccessToken, LoginManager } = FBSDK;
 
 class LoginView extends React.Component {
 
@@ -24,6 +24,32 @@ class LoginView extends React.Component {
       username: ''
     }
   }
+
+  _FBLogin(navigate){
+    LoginManager.logInWithReadPermissions(['public_profile']).then(
+    function(result) {
+      if (result.isCancelled) {
+        alert('Login was cancelled');
+      } else {
+        AccessToken.getCurrentAccessToken().then((data) => {
+          try{
+            AsyncStorage.setItem('accessToken', data.accessToken);
+          } catch (error){
+            console.log('Error saving token', error)
+          }
+        });
+        navigate('HomeView', {});
+      }
+    },
+    function(error) {
+      alert('Login failed with error: ' + error);
+    }
+  );
+  }
+
+  // _navigateToHomeView(){
+  //     this.props.navigation.navigate('HomeView', {})
+  // }
 
   render() {
     let {navigate} = this.props.navigation;
@@ -52,14 +78,14 @@ class LoginView extends React.Component {
                 <View style={{backgroundColor:'transparent', width:300}}>
 
                   <TouchableHighlight
-                    onPress={()=> navigate('HomeView')}
+                    onPress={()=> this._FBLogin(navigate)}
                     underlayColor={'transparent'}
                     activeOpacity={0.6}
                     >
                     <View
                       style={{height:80, width:300, backgroundColor: '#eb0b42',flexDirection:'column', justifyContent: 'center', alignItems: 'center', borderRadius: 50, borderBottomColor: '#b10d36', borderBottomWidth:1}}
                     >
-                      <Text style={{color:'#fff', fontSize: 24, fontWeight: 'bold'}}>Facebook Login</Text>
+                      <Text style={{color:'#fff', fontSize: 28, fontWeight: 'bold'}}>LOGIN</Text>
                     </View>
                   </TouchableHighlight>
 
@@ -86,7 +112,7 @@ class LoginView extends React.Component {
                    onLogoutFinished={() => console.log("User logged out")}/>*/}
 
                   <Text style={{
-                    color: '#5b5f7e',
+                    color: '#7c81a6',
                     textAlign: 'center',
                     marginTop: 15,
                     fontSize: 14

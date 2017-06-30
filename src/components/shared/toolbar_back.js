@@ -15,14 +15,24 @@ class ToolBarBack extends Component {
     super(props);
   }
 
+  _navigate(routeName, params = {}){
+    this.props.nav.dispatch({
+      type: "replaceScreen",
+      routeName: routeName,
+      params: params
+    })
+  }
+
+
   render() {
+
     return (
       <View>
         <StatusBar hidden/>
         <View>
           <View style={styles.toolbar}>
             <Text style={styles.toolbarTitle}>{this.props.title}</Text>
-            <Text style={styles.toolbarButton} onPress={() => this.props.nav.goBack(null)}>BACK</Text>
+            <Text style={styles.toolbarButton} onPress={() => this._navigate('HomeView')}>BACK</Text>
           </View>
         </View>
       </View>

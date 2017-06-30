@@ -11,6 +11,7 @@ import Modal from 'react-native-simple-modal';
 
 import ToolBar from '../shared/toolbar';
 import Menu from '../shared/menu';
+import ModalMenu from '../shared/modalMenu';
 import QRCodeGen from '../shared/qrCode';
 import MyList from '../shared/list';
 
@@ -44,6 +45,7 @@ export default class HomeView extends Component {
         colors={['#040626', '#040626']}>
 
         <Menu nav={this.props.navigation} />
+
         <ToolBar title="SHRE" />
         <View style={styles.content}>
 
@@ -96,6 +98,7 @@ export default class HomeView extends Component {
             </View>
           </View>
         </Modal>
+        <ModalMenu />
     </LinearGradient>
     );
   }

@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   listItem: {
-    color: '#6e7293',
+    color: '#7c81a6',
     textAlign: 'left',
     padding: 10,
     fontSize: 20,

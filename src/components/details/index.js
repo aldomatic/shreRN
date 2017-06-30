@@ -39,7 +39,7 @@ export default class DetailsView extends Component {
              }}>
              <Image
              source={require('../../assets/images/avatar-placeholder.png')}
-             style={{width: 130, height: 130, marginTop: 10, overflow: 'hidden', borderRadius: 65, borderColor: '#5b5f7e', borderWidth: 5}}
+             style={{width: 130, height: 130, marginTop: 10, overflow: 'hidden', borderRadius: 65, borderColor: '#0b0d2f', borderWidth: 5}}
              />
              <Text style={styles.name}>{id}</Text>
               <View style={{flexDirection: 'row', justifyContent: 'center'}}>
@@ -62,14 +62,13 @@ const styles = StyleSheet.create({
     flex: 1
   },
   name: {
-   color: '#fff',
-   fontSize: 26,
+   color: '#7c81a6',
+   fontSize: 24,
    padding:10,
    textAlign:'center',
    marginTop:0,
    marginBottom: 0,
    backgroundColor: 'transparent',
-   fontWeight: 'bold',
    alignItems: 'stretch'
  },
  text:{

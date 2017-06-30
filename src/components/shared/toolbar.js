@@ -25,7 +25,8 @@ class ToolBar extends Component {
     this.props.dispatch({
       type: "OPEN_MENU",
       payload: {
-        isActive: true
+        isActive: false,
+        openMenu: true
       }
     });
   }
@@ -38,7 +39,7 @@ class ToolBar extends Component {
         <View>
           <View style={styles.toolbar}>
             <Text style={styles.toolbarTitle}>{this.props.title}</Text>
-            <Text style={styles.toolbarButton} onPress={this._openMenu}>Settings</Text>
+            <Text style={styles.toolbarButton} onPress={this._openMenu}>MENU</Text>
           </View>
         </View>
       </View>
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     marginTop:8,
     marginRight: 5,
     flex: .25,
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'normal'
     },
   toolbarTitle: {
