@@ -73,7 +73,7 @@ export default class ProfileView extends Component {
              }}>
              <Image
              source={{uri: this.state.FBMeData.pic}}
-             style={{width: 130, height: 130, marginTop: 25, marginBottom: 10, overflow: 'hidden', borderRadius: 65, borderColor: '#0b0d2f', borderWidth: 5}}
+             style={{width: 130, height: 130, marginTop: 30, marginBottom: 10, overflow: 'hidden', borderRadius: 65, borderColor: '#0b0d2f', borderWidth: 5}}
              />
 
              <Text style={styles.name}>{this.state.FBMeData.name}</Text>

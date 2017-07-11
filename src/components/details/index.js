@@ -8,7 +8,7 @@ import {
   Image
 } from 'react-native';
 
-import ToolBarBack from '../shared/toolbar_back';
+import ToolBarRedux from '../shared/toolbar_redux_back';
 
 import LinearGradient from 'react-native-linear-gradient';
 // let RNLinearGradient = requireNativeComponent('RNLinearGradientSwift', null);
@@ -27,7 +27,7 @@ export default class DetailsView extends Component {
         locations={[0,0.8]}
         colors={['#040626', '#040626']}>
 
-            <ToolBarBack title="Details" nav={this.props.navigation} />
+            <ToolBarRedux title="Details" nav={this.props.navigation} />
 
             <View style={{
                flexDirection: 'column',
