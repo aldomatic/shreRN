@@ -54,7 +54,7 @@ export default class ProfileView extends Component {
       <LinearGradient
         style={styles.mainContainer}
         locations={[0,0.8]}
-        colors={['#5ED2A0', '#339CB1']}>
+        colors={['#040626', '#040626']}>
 
             <ToolBarBack title="Profile" nav={this.props.navigation} />
             <View style={{
@@ -73,7 +73,7 @@ export default class ProfileView extends Component {
              }}>
              <Image
              source={{uri: this.state.FBMeData.pic}}
-             style={{width: 120, height: 120, marginTop: 10, overflow: 'hidden', borderRadius: 60, borderColor: '#5ED2A0', borderWidth: 5}}
+             style={{width: 130, height: 130, marginTop: 30, marginBottom: 10, overflow: 'hidden', borderRadius: 65, borderColor: '#0b0d2f', borderWidth: 5}}
              />
 
              <Text style={styles.name}>{this.state.FBMeData.name}</Text>
@@ -89,7 +89,7 @@ export default class ProfileView extends Component {
 
 
             <View style={{flexDirection: 'row', flex: .10}}>
-               <TouchableHighlight style={{flex: .15, backgroundColor: '#1b5f6d', justifyContent: 'center', alignItems: 'center'}} underlayColor={'#1b5f6d'} activeOpacity={0.7} onPress={() => {
+               <TouchableHighlight style={{flex: .15, backgroundColor: '#272b46', justifyContent: 'center', alignItems: 'center'}} underlayColor={'#272b46'} activeOpacity={0.7} onPress={() => {
                  console.log("EDIT")
                }}>
                <View>
@@ -110,17 +110,16 @@ const styles = StyleSheet.create({
   },
   name: {
    color: '#fff',
-   fontSize: 26,
+   fontSize: 24,
    padding:10,
    textAlign:'center',
    marginTop:0,
    marginBottom: 0,
    backgroundColor: 'transparent',
-   fontWeight: 'bold',
    alignItems: 'stretch'
  },
  text:{
-   color:'#fff',
+   color:'#7c81a6',
    fontSize:16,
    textAlign:'center',
    padding:5,
