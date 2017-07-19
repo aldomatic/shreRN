@@ -89,12 +89,12 @@ export default class HomeView extends Component {
           <View style={{flex: 1}}>
             <View style={{flex:.25, flexDirection: 'row', justifyContent: 'flex-end'}}>
               <TouchableOpacity onPress={() => this._toggleModal()}>
-                <Text style={{color: '#5b5f7e', marginRight: 15, marginTop: 15, fontSize: 18}}>Close</Text>
+                <Text style={{color: '#5b5f7e', marginRight: 15, marginTop: 15, fontSize: 16}}>Close</Text>
               </TouchableOpacity>
             </View>
             <View style={{flex:1, justifyContent: 'flex-start', alignItems: 'center'}}>
               <QRCodeGen />
-              <Text style={{color:'#5b5f7e', marginTop: 40, textAlign:'center', fontSize: 18}}>Position the camera over{"\n"}the graphic above.</Text>
+              <Text style={{color:'#5b5f7e', marginTop: 40, textAlign:'center', fontSize: 16}}>Position the camera over{"\n"}the graphic above.</Text>
             </View>
           </View>
         </Modal>

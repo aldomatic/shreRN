@@ -68,15 +68,22 @@ class LoginView extends React.Component {
                 justifyContent: 'center'
               }}>
                 <Text style={{
-                  color: '#2B6059',
-                  fontSize: 50,
+                  color: '#eb0b42',
+                  fontSize: 70,
                   fontWeight: 'bold',
+                  letterSpacing: -2,
                   backgroundColor: 'transparent'
-                }}></Text>
+                }}>SHRE</Text>
+                <Text style={{
+                  color: '#6e7291',
+                  fontSize: 19,
+                  fontWeight: 'normal',
+                  letterSpacing: 0,
+                  backgroundColor: 'transparent'
+                }}>Connect with Peeps</Text>
               </View>
               <View style={{flex:2, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
                 <View style={{backgroundColor:'transparent', width:300}}>
-
                   <TouchableHighlight
                     onPress={()=> this._FBLogin(navigate)}
                     underlayColor={'transparent'}
@@ -89,34 +96,12 @@ class LoginView extends React.Component {
                     </View>
                   </TouchableHighlight>
 
-                  {/*}<LoginButton
-                   readPermissions={["public_profile"]}
-                   onLoginFinished={
-                     (error, result) => {
-                       if (error) {
-                         alert("Login failed with error: " + result.error);
-                       } else if (result.isCancelled) {
-                         alert("Login was cancelled");
-                       } else {
-                         AccessToken.getCurrentAccessToken().then((data) => {
-                           try{
-                             AsyncStorage.setItem('accessToken', data.accessToken)
-                           } catch (error){
-                             console.log('Error saving token', error)
-                           }
-                         });
-                         navigate('HomeView', {})
-                       }
-                     }
-                   }
-                   onLogoutFinished={() => console.log("User logged out")}/>*/}
-
                   <Text style={{
-                    color: '#7c81a6',
+                    color: '#5b5f7e',
                     textAlign: 'center',
-                    marginTop: 15,
-                    fontSize: 14
-                  }}>We use facebook to authenticate your identity.
+                    marginTop: 25,
+                    fontSize: 13
+                  }}>We use facebook to{"\n"}authenticate your identity.
                   </Text>
                   </View>
               </View>
